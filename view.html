@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Liste des plantations</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script>
+    // Activation dark mode via Tailwind config
+    tailwind.config = {
+      darkMode: 'class',
+    }
+  </script>
+</head>
+<body class="flex min-h-screen bg-gray-100 text-gray-900 font-[Segoe_UI] dark:bg-gray-900 dark:text-gray-100">
+
+  <!-- Sidebar -->
+  <aside id="sidebar" class="fixed top-0 left-0 h-full w-64 bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 flex flex-col justify-between p-4 transform -translate-x-full transition-transform duration-300 lg:translate-x-0 z-50">
+    <div>
+      <div class="flex justify-between items-center mb-4">
+        <img src="img/ecoVahatra.jpg" alt="ecovahatra-logo" class="w-12">
+        <button id="closeSidebar" class="lg:hidden text-xl">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <ul class="space-y-1">
+        <li>
+          <a href="dashboard.html" class="flex items-center gap-2 px-4 py-2 rounded-md hover:bg-[#4a2e1a] hover:text-white">
+            <i class="fa-solid fa-house"></i> Dashboard
+          </a>
+        </li>
+        <li>
+          <a href="liste_plantation.html" class="flex items-center gap-2 px-4 py-2 rounded-md hover:bg-[#4a2e1a] hover:text-white">
+            <i class="fa-solid fa-chart-bar"></i> Plantations
+          </a>
+        </li>
+        <li>
+          <a href="view.html" class="flex items-center gap-2 px-4 py-2 rounded-md bg-[#4a2e1a] text-white">
+            <i class="fa-solid fa-star"></i> Suivis
+          </a>
+        </li>
+        <li>
+          <a href="#" class="flex items-center gap-2 px-4 py-2 rounded-md hover:bg-[#4a2e1a] hover:text-white">
+            <i class="fa-solid fa-folder"></i> Accueil
+          </a>
+        </li>
+        <li>
+          <a href="#" class="flex items-center gap-2 px-4 py-2 rounded-md hover:bg-[#4a2e1a] hover:text-white">
+            <i class="fa-solid fa-chart-line"></i> Statistiques
+          </a>
+        </li>
+        <li>
+          <a href="#" class="flex items-center gap-2 px-4 py-2 rounded-md hover:bg-[#4a2e1a] hover:text-white">
+            <i class="fa-solid fa-users"></i> Utilisateurs
+          </a>
+        </li>
+      </ul>
+
+    </div>
+    <div class="mt-6 space-y-1">
+      <li class="flex items-center gap-2 px-4 py-2 rounded-md hover:bg-[#4a2e1a] hover:text-white cursor-pointer">
+        <i class="fa-solid fa-gear"></i> Paramètre
+      </li>
+      <li class="flex items-center gap-2 px-4 py-2 rounded-md hover:bg-[#4a2e1a] hover:text-white cursor-pointer">
+        <i class="fa-solid fa-right-from-bracket"></i> Se Déconnecter
+      </li>
+    </div>
+  </aside>
+
+  <!-- Main -->
+  <main class="flex-1 flex flex-col w-full lg:ml-64">
+    <!-- Header -->
+    <header class="flex justify-between items-center px-4 sm:px-6 py-4 bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
+      <!-- Burger menu (mobile only) -->
+      <div class="flex items-center gap-3">
+        <button id="openSidebar" class="lg:hidden text-xl">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+        <div class="text-sm text-gray-700 dark:text-gray-300">
+          <i class="fa-solid fa-house text-gray-500 dark:text-gray-400"></i> Accueil /
+        </div>
+      </div>
+      
+      <div class="flex items-center gap-3">
+        <button class="bg-gray-200 dark:bg-gray-700 px-3 py-2 rounded-md cursor-pointer">
+          <i class="fa-solid fa-filter"></i>
+        </button>
+        <input type="text" placeholder="Search" class="px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none bg-white dark:bg-gray-700 dark:text-gray-100">
+      </div>
+
+      <div class="flex items-center gap-4">
+        <button id="darkModeToggle" class="text-lg">
+          <i class="fa-solid fa-moon dark:hidden"></i>
+          <i class="fa-solid fa-sun hidden dark:inline"></i>
+        </button>
+        <i class="fa-solid fa-bell text-lg text-gray-600 dark:text-gray-300"></i>
+        <div class="hidden sm:block">
+          <p class="font-bold">ZAFIMALADY</p>
+          <p class="text-sm text-gray-500 dark:text-gray-400">Jean Britney Fraviogarry</p>
+        </div>
+        <div class="bg-[#4a2e1a] text-white font-bold rounded-full w-9 h-9 flex items-center justify-center">
+          Z
+        </div>
+      </div>
+    </header>
+
+    <!-- Content -->
+    <section class="flex-1 bg-gray-100 dark:bg-gray-900 p-4 sm:p-6">
+       <!-- Info plantation -->
+      <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-4 mb-4">
+        <h3 class="text-lg font-bold text-brown-700 dark:text-brown-300 mb-2">Information de plantation</h3>
+        <p class="text-sm sm:text-base"><strong>Espèces :</strong> Abado</p>
+        <p class="text-sm sm:text-base"><strong>Traitement :</strong> Trempage dans l’eau froide</p>
+        <p class="text-sm sm:text-base"><strong>Nombre par pot :</strong> 2</p>
+        <p class="text-sm sm:text-base"><strong>Date de plantation :</strong> 21/05/2025</p>
+      </div>
+
+      <!-- Dates levée -->
+      <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-4 mb-4">
+        <div class="flex justify-between items-center mb-2">
+          <h3 class="text-lg font-bold text-brown-700 dark:text-brown-300">Date de levée</h3>
+          <a href="#" class="text-sm sm:text-base text-yellow-600 hover:underline">
+            <i class="fa-solid fa-plus"></i> Ajouter date de levée
+          </a>
+        </div>
+        <p class="text-sm sm:text-base"><strong>Date de première levée :</strong> 21/05/2025</p>
+        <p class="text-sm sm:text-base"><strong>Date de levée majoritaire :</strong> 21/05/2025</p>
+        <p class="text-sm sm:text-base"><strong>Date de dernier levée :</strong> 21/05/2025</p>
+        <p class="text-sm sm:text-base"><strong>Nombre de plante poussées :</strong> 25</p>
+        <p class="text-sm sm:text-base"><strong>Date de sortie :</strong> 21/05/2025</p>
+      </div>
+
+      <!-- Suivi -->
+      <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-4">
+        <h3 class="text-lg font-bold text-brown-700 dark:text-brown-300 mb-3">Suivi Existant</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          
+          <!-- Box existante -->
+          <div class="p-4 border border-gray-200 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-700">
+            <p class="text-sm sm:text-base"><strong>Période :</strong> 2 mois</p>
+            <p class="text-sm sm:text-base"><strong>Tailles :</strong> 2</p>
+            <p class="text-sm sm:text-base"><strong>Défauts :</strong> Taille anormale</p>
+            <p class="text-sm sm:text-base"><strong>Cause de mort :</strong> Drainage insuffisant du substrat, stagnation d’eau et maladie.</p>
+            <p class="text-sm sm:text-base"><strong>Date de sortie :</strong> 21/05/2025</p>
+          </div>
+
+          <!-- Add suivi -->
+          <div class="p-6 border border-gray-200 dark:border-gray-700 rounded-lg flex flex-col items-center justify-center bg-gray-100 dark:bg-gray-600 cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-500">
+            <i class="fa-solid fa-plus text-2xl mb-2"></i>
+            <p class="text-sm sm:text-base">Nouveau suivi</p>
+          </div>
+
+          <!-- Add suivi -->
+          <div class="p-6 border border-gray-200 dark:border-gray-700 rounded-lg flex flex-col items-center justify-center bg-gray-100 dark:bg-gray-600 cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-500">
+            <i class="fa-solid fa-plus text-2xl mb-2"></i>
+            <p class="text-sm sm:text-base">Nouveau suivi</p>
+          </div>
+
+        </div>
+      </div>
+      
+    </section>
+  </main>
+
+  <script>
+    // Sidebar toggle
+    const sidebar = document.getElementById("sidebar");
+    const openBtn = document.getElementById("openSidebar");
+    const closeBtn = document.getElementById("closeSidebar");
+
+    openBtn.addEventListener("click", () => {
+      sidebar.classList.remove("-translate-x-full");
+    });
+
+    closeBtn.addEventListener("click", () => {
+      sidebar.classList.add("-translate-x-full");
+    });
+
+    // Dark mode toggle
+    const darkToggle = document.getElementById("darkModeToggle");
+    darkToggle.addEventListener("click", () => {
+      document.documentElement.classList.toggle("dark");
+    });
+  </script>
+</body>
+</html>

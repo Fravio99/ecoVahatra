@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ecovahatra-login</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inknut+Antiqua&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: 'Inknut Antiqua', serif;
+    }
+  </style>
+</head>
+<body class="flex items-center justify-center min-h-screen bg-gray-100 text-sm">
+
+  <div class="max-w-[460px] h-[550px] bg-cover bg-center bg-no-repeat mx-auto mt-2 text-center rounded shadow-md" 
+       style="background-image: linear-gradient(rgba(255,252,252,0.9), rgba(255,255,255,0.9)), url('img/eco.jpg');">
+    
+    <div class="text-center pt-2 mb-1">
+      <img src="img/ecoVahatra.jpg" alt="Logo Ecovahatra" class="w-24 h-24 mx-auto">
+    </div>
+
+    <h1 class="text-[#563709] text-xl font-bold mb-2">LOGIN</h1>
+
+    <form action="dashboard.html" method="post" class="px-4">
+      <label for="user" class="block text-left text-[#563709] font-bold mt-2 ml-4">Utilisateur</label>
+      <input type="text" id="user" name="username" placeholder="Entrer votre utilisateur"
+             class="w-[90%] px-4 py-3 mt-1 mb-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#563709]">
+
+      <label for="password" class="block text-left text-[#563709] font-bold mt-2 ml-4">Mot de passe</label>
+      <input type="text" id="password" name="password" placeholder="Entrer votre mot de passe"
+             class="w-[90%] px-4 py-3 mt-1 mb-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#563709]">
+
+      <input type="submit" value="LOGIN"
+             class="w-1/2 bg-[#563709] text-white py-3 rounded-md hover:bg-[#412a07] cursor-pointer transition duration-200">
+    </form>
+  </div>
+
+</body>
+</html>
+
+
